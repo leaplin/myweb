@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于本站</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:"Microsoft Yahei";}
+        header {background:#165DFF; padding:16px 8%;}
+        nav {display:flex; justify-content:space-between; align-items:center;}
+        .logo {color:#fff; font-size:24px; font-weight:bold;}
+        .nav-link a {color:#fff; text-decoration:none; margin-left:30px; font-size:16px;}
+        .nav-link a:hover {text-decoration:underline;}
+        main {padding:50px 8%; max-width:1000px; margin:0 auto;}
+        h2 {font-size:30px; color:#165DFF; margin-bottom:25px; border-left:4px solid #165DFF; padding-left:12px;}
+        p {font-size:17px; line-height:1.8; color:#333; margin-bottom:16px;}
+        footer {margin-top:100px; background:#222; color:#fff; text-align:center; padding:20px;}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">计算机专业课程平台</div>
+        <div class="nav-link">
+            <a href="index.html">首页</a>
+            <a href="courses.html">全部课程</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h2>网站介绍</h2>
+    <p>本网站面向计算机专业师生，用于统一展示专业全部课程信息，方便快速查询课程、教师、上课时间与机房地点。</p>
+    <p>网站覆盖编程语言、前端、网络、数据库四大类计算机核心课程，支持文字搜索与分类筛选双重功能。</p>
+
+    <h2>开发技术说明</h2>
+    <p>1. 页面结构：共3个HTML页面，首页、课程列表、关于页面，导航互相跳转；</p>
+    <p>2. 样式实现：HTML5语义标签 + CSS3 Grid/Flex弹性布局，蓝白简约配色，文字清晰；</p>
+    <p>3. JS交互：原生JavaScript实现课程实时筛选搜索，无匹配内容自动提示空白文案；</p>
+    <p>4. 部署方式：纯静态网页，不含后端代码，上传Gitee开启Pages即可公开访问，JS代码正常运行。</p>
+</main>
+
+<footer>
+    ©2026 计算机专业课程展示网站
+</footer>
+</body>
+</html>

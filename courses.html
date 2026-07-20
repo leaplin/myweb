@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机专业全部课程</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:"Microsoft Yahei";}
+        header {background:#165DFF; padding:16px 8%;}
+        nav {display:flex; justify-content:space-between; align-items:center;}
+        .logo {color:#fff; font-size:24px; font-weight:bold;}
+        .nav-link a {color:#fff; text-decoration:none; margin-left:30px; font-size:16px;}
+        .nav-link a:hover {text-decoration:underline;}
+        main {padding:40px 8%; max-width:1400px; margin:0 auto;}
+        .search-bar {display:flex; gap:12px; margin-bottom:30px; flex-wrap:wrap; align-items:center;}
+        #searchInput {flex:1; min-width:280px; padding:10px 14px; font-size:16px; border:1px solid #ccc; border-radius:4px;}
+        #typeSelect {padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;}
+        #searchBtn {padding:10px 24px; background:#165DFF; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:16px;}
+        #searchBtn:hover {background:#0E42AA;}
+        .course-list {display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:24px;}
+        .course-card {border:1px solid #e0e6f0; border-radius:8px; padding:20px;}
+        .course-card h3 {color:#165DFF; margin-bottom:10px; font-size:20px;}
+        .course-card p {margin:6px 0; color:#444; font-size:15px; line-height:1.6;}
+        .empty-tip {text-align:center; font-size:18px; color:#888; padding:60px 0; display:none;}
+        footer {margin-top:80px; background:#222; color:#fff; text-align:center; padding:20px;}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">计算机专业课程平台</div>
+        <div class="nav-link">
+            <a href="index.html">首页</a>
+            <a href="courses.html">全部课程</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="输入课程名/教师姓名搜索">
+        <select id="typeSelect">
+            <option value="all">全部课程分类</option>
+            <option value="编程语言">编程语言</option>
+            <option value="前端开发">前端开发</option>
+            <option value="计算机网络">计算机网络</option>
+            <option value="数据库">数据库</option>
+        </select>
+        <button id="searchBtn">筛选课程</button>
+    </div>
+
+    <div class="empty-tip" id="emptyTip">未查询到匹配课程，请更换关键词或分类</div>
+    <div class="course-list" id="courseWrap"></div>
+</main>
+
+<footer>
+    ©2026 计算机专业课程展示网站
+</footer>
+
+<script>
+// 计算机专业课程数据：名称、教师、时间、教室、分类
+const courseData = [
+    {name:"Java程序设计", teacher:"王老师", time:"周一 8:30-10:30", room:"计算机机房301", type:"编程语言"},
+    {name:"HTML5与Web前端开发", teacher:"李老师", time:"周二 14:00-16:00", room:"计算机机房205", type:"前端开发"},
+    {name:"计算机网络原理", teacher:"张教授", time:"周三 9:00-11:00", room:"教学楼402", type:"计算机网络"},
+    {name:"MySQL数据库原理", teacher:"陈老师", time:"周四 10:00-12:00", room:"计算机机房303", type:"数据库"},
+    {name:"Python数据分析", teacher:"刘老师", time:"周五 15:00-17:00", room:"计算机机房201", type:"编程语言"},
+    {name:"JavaScript交互开发", teacher:"赵教授", time:"周一 19:00-21:00", room:"计算机机房205", type:"前端开发"},
+]
+
+const wrap = document.getElementById("courseWrap");
+const searchInput = document.getElementById("searchInput");
+const typeSelect = document.getElementById("typeSelect");
+const searchBtn = document.getElementById("searchBtn");
+const emptyTip = document.getElementById("emptyTip");
+
+// 渲染课程卡片
+function render(list){
+    wrap.innerHTML = "";
+    if(list.length === 0){
+        emptyTip.style.display = "block";
+        return;
+    }
+    emptyTip.style.display = "none";
+    list.forEach(item=>{
+        const div = document.createElement("div");
+        div.className = "course-card";
+        div.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>授课教师：${item.teacher}</p>
+            <p>上课时间：${item.time}</p>
+            <p>上课地点：${item.room}</p>
+            <p>课程分类：${item.type}</p>
+        `;
+        wrap.appendChild(div);
+    })
+}
+
+// 页面加载默认展示全部课程
+render(courseData);
+
+// 点击按钮筛选交互
+searchBtn.addEventListener("click",()=>{
+    const keyword = searchInput.value.trim().toLowerCase();
+    const selectType = typeSelect.value;
+    const filterResult = courseData.filter(item=>{
+        const matchKey = item.name.toLowerCase().includes(keyword) || item.teacher.toLowerCase().includes(keyword);
+        const matchType = selectType === "all" || item.type === selectType;
+        return matchKey && matchType;
+    })
+    render(filterResult);
+})
+</script>
+</body>
+</html>

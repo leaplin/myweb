@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机专业课程展示平台</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:"Microsoft Yahei";}
+        header {background:#165DFF; padding:16px 8%;}
+        nav {display:flex; justify-content:space-between; align-items:center;}
+        .logo {color:#fff; font-size:24px; font-weight:bold;}
+        .nav-link a {color:#fff; text-decoration:none; margin-left:30px; font-size:16px;}
+        .nav-link a:hover {text-decoration:underline;}
+        .banner {background:#f0f6ff; padding:80px 8%; text-align:center;}
+        .banner h2 {font-size:36px; color:#0E42AA; margin-bottom:20px;}
+        .banner p {font-size:18px; color:#555; margin-bottom:30px;}
+        .btn {padding:12px 30px; background:#165DFF; color:#fff; text-decoration:none; border-radius:6px; font-size:16px;}
+        .btn:hover {background:#0E42AA;}
+        .intro {padding:60px 8%;}
+        .intro h3 {text-align:center; font-size:28px; color:#222; margin-bottom:40px;}
+        .intro-box {display:flex; gap:30px; justify-content:center; flex-wrap:wrap;}
+        .box {width:300px; padding:25px; background:#f8f9fa; border-radius:8px;}
+        .box h4 {font-size:20px; margin-bottom:12px; color:#165DFF;}
+        footer {margin-top:60px; background:#222; color:#fff; text-align:center; padding:20px;}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">计算机专业课程平台</div>
+        <div class="nav-link">
+            <a href="index.html">首页</a>
+            <a href="courses.html">全部课程</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>计算机专业全部课程查询展示平台</h2>
+    <p>涵盖编程、网络、数据库、前端、嵌入式课程，支持关键词搜索、分类筛选，查看教师、上课时间与教室</p>
+    <a href="courses.html" class="btn">浏览全部课程</a>
+</section>
+
+<section class="intro">
+    <h3>平台核心功能</h3>
+    <div class="intro-box">
+        <div class="box">
+            <h4>完整课程信息</h4>
+            <p>展示课程名称、授课教师、上课时段、教室地点四项基础信息</p>
+        </div>
+        <div class="box">
+            <h4>搜索筛选系统</h4>
+            <p>输入课程/教师名字搜索，搭配专业分类下拉框精准过滤课程</p>
+        </div>
+        <div class="box">
+            <h4>静态轻量化网页</h4>
+            <p>无后端依赖，上传Gitee Pages即可公开访问，支持JS交互</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    ©2026 计算机专业课程展示网站 | 纯前端静态页面
+</footer>
+</body>
+</html>
