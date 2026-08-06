@@ -21,7 +21,18 @@
         .intro-box {display:flex; gap:30px; justify-content:center; flex-wrap:wrap;}
         .box {width:300px; padding:25px; background:#f8f9fa; border-radius:8px;}
         .box h4 {font-size:20px; margin-bottom:12px; color:#165DFF;}
-        footer {margin-bottom:60px; background:#222; color:#fff; text-align:center; padding:20px;}
+        footer {
+		  position: fixed;
+		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  background:#222;
+		  color:#fff;
+		  text-align:center;
+		  padding:20px;
+		  box-sizing: border-box; /* padding不会撑宽超出屏幕 */
+		}
+
     </style>
 </head>
 <body>
