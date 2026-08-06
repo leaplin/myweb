@@ -14,7 +14,18 @@
         main {padding:50px 8%; max-width:1000px; margin:0 auto;}
         h2 {font-size:30px; color:#165DFF; margin-bottom:25px; border-left:4px solid #165DFF; padding-left:12px;}
         p {font-size:17px; line-height:1.8; color:#333; margin-bottom:16px;}
-        footer {margin-top:100px; background:#222; color:#fff; text-align:center; padding:20px;}
+        footer {
+		  position: fixed;
+		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  background:#222;
+		  color:#fff;
+		  text-align:center;
+		  padding:20px;
+		  box-sizing: border-box; /* padding不会撑宽超出屏幕 */
+		}
+
     </style>
 </head>
 <body>
