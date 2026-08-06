@@ -22,7 +22,18 @@
         .course-card h3 {color:#165DFF; margin-bottom:10px; font-size:20px;}
         .course-card p {margin:6px 0; color:#444; font-size:15px; line-height:1.6;}
         .empty-tip {text-align:center; font-size:18px; color:#888; padding:60px 0; display:none;}
-        footer {margin-top:80px; background:#222; color:#fff; text-align:center; padding:20px;}
+        footer {
+		  position: fixed;
+		  bottom: 0;
+		  left: 0;
+		  width: 100%;
+		  background:#222;
+		  color:#fff;
+		  text-align:center;
+		  padding:20px;
+		  box-sizing: border-box; /* padding不会撑宽超出屏幕 */
+		}
+
     </style>
 </head>
 <body>
